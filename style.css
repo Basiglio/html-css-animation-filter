@@ -90,7 +90,13 @@
 }
 @keyframes girare {
   0% {
-  transform: rotate(360deg);
+  transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(365deg);
   }
 }
 /* ESERCIZIO 11 */
@@ -98,19 +104,18 @@
  font-size: 60px;
 }
 .ex-11-icon:hover {
-  animation: un_giro 1s linear;
+  animation: un_giro 5s linear;
 }
 @keyframes un_giro {
   0% {
   transform: rotate(0);
   }
   50% {
-  transform: rotate(210deg);
+  transform: rotate(300deg);
   }
   100% {
   transform: rotate(0);
   }
-
 }
 .ex-12-button, .ex-13-button {
   position: relative;
@@ -142,14 +147,87 @@
   height: 20px;
 }
 /* ESERCIZIO 12 */
-.ex-12-button {
-  animation: rotazione 2s linear;
+.ex-12-button:hover .ex-12-top-white {
+  animation: white_top_move 2s linear;
 }
-@keyframes rotazione {
+@keyframes white_top_move {
   0% {
     left: 10%;
   }
+  50% {
+    left: calc(100% - 60px);
+  }
+  100% {
+    left: 10%;
+  }
+}
+.ex-12-button:hover .ex-12-bottom-white {
+    animation: white_bot_move 2s linear;
+}
+@keyframes white_bot_move {
   0% {
+    right: 20%;
+  }
+  50% {
+    right: calc(100% - 60px);
+  }
+  100% {
+    right: 20%;
+  }
+}
+/* ESERCIZIO 13 */
+.ex-13-button:hover .ex-13-top-white {
+  animation: white_top_move_2 10s linear infinite;
+}
+@keyframes white_top_move_2 {
+  0% {
+    left: 10%;
+  }
+  20% {
+    left: calc(100% - 30px);
+    top: -15px;
+  }
+  40% {
+    left: calc(100% - 30px);
+    top: 100%;
+  }
+  60% {
+    left: calc(0% - 15px);
+    top: 100%;
+  }
+  80% {
+    left: calc(0% - 20px);
+    top: -5px;
+  }
+  100% {
+    left: 10%;
+  }
+}
 
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: white_bot_move_2 10s linear infinite;
+}
+@keyframes white_bot_move_2 {
+  0% {
+    right: 10%;
+  }
+  20% {
+    right: calc(100% - 55px);
+    bottom: -15px;
+  }
+  40% {
+    right: calc(100% - 55px);
+    bottom: 90%;
+  }
+  60% {
+    right: calc(0% - 15px);
+    bottom: 100%;
+  }
+  80% {
+    right: calc(0% - 20px);
+    bottom: -5px;
+  }
+  100% {
+    right: 10%;
   }
 }
